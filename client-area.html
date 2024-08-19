@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="de-DE">
+<head>
+    <meta charset="UTF-8">
+    <title>Client Area - Request Payout</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="css/normalize.min.css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/flexboxgrid.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/theme.css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        .membership-section {
+            background-color: #f9f9f9;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .membership-card {
+            display: inline-block;
+            width: calc(50% - 20px);
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .membership-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+        .membership-card h3 {
+            margin-top: 0;
+        }
+        .membership-card .price {
+            font-size: 24px;
+            color: #333;
+        }
+        .membership-card button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .membership-card button:hover {
+            background-color: #0056b3;
+        }
+        .payment-options {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .payment-options button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .payment-options button:hover {
+            background-color: #0056b3;
+        }
+
+        .membership-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Space between the two cards */
+        }
+
+        .sidenote-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px; /* Space between the cards and the sidenote */
+        }
+
+        .sidenote-container p {
+            text-align: center;
+            font-size: 14px;
+            color: #333;
+            margin: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header class="fade-in">
+        <div class="navigation-bar flex middle-xs">
+            <img src="img/eclogo.png" class="logo" alt="Exclusives Club Logo">
+            <nav class="end-xs">
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="index.html#about-us">About us</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="/client-area.html">Membership</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="/news.html">News</a></li>
+
+                </ul>
+            </nav>
+        </div>
+        <div class="hero flex middle-xs" style="background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url('img/hero-image.jpg');">
+            <div class="hero-text">
+                <h1>Client Area</h1>
+                <h4>Select your membership plan and proceed with payment.</h4>
+            </div>
+        </div>
+    </header>
+    <div class="wrapper">
+        <main>
+            <section class="membership-section">
+                <div class="container">
+                    <h2 class="section-title">Choose Your Membership</h2>
+                    <div class="row membership-container">
+                        <div class="col-md">
+                            <div class="membership-card" data-price="100" data-type="basic" data-link="https://oxapay.com/pay/99211567">
+                                <h3>Basic Membership</h3>
+                                <p class="price">$10</p>
+                                <p>Access to basic features and community benefits.</p>
+                                <button type="button" class="select-button">Select</button>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="membership-card" data-price="250" data-type="premium" data-link="https://oxapay.com/pay/74806105">
+                                <h3>Premium Membership</h3>
+                                <p class="price">$50</p>
+                                <p>All basic features plus premium access and exclusive services.</p>
+                                <button type="button" class="select-button">Select</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidenote-container">
+                        <p>SIDE NOTE: Please contact us with your payment ID after completing the order.</p>
+                    </div>
+                </div>
+                
+                        
+                        </div>
+                    </div>
+                    <div class="payment-options" id="paymentOptions">
+                        <h2>Proceed with Payment</h2>
+                        <button id="payButton">Pay Now</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row margin-bottom-small">
+                <div class="col-md-8">
+                    <h3>About us</h3>
+                    <p>Exclusives Club is a community for business tycoons who are eager to collaborate, buy and sell companies, receive exclusive invitations in Dubai, and access complimentary services, among many other benefits. If you're under 18 and interested in starting your own physical stores, EC is the perfect choice! Join EC to take advantage of affordable items and much more.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="row secondary-footer">
+        <div class="col-md">
+            <p>Made with love ♥ by The Team © 2024.</p>
+        </div>
+        <div class="col-md end-md">
+            <p><a href="#">Imprint</a> | <a href="#">Data Protection</a></p>
+        </div>
+    </div>
+    <!-- Custom JavaScript -->
+    <script>
+        let paymentLink = null;
+
+        document.querySelectorAll('.select-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const membershipCard = this.closest('.membership-card');
+                paymentLink = membershipCard.dataset.link;
+                
+                // Show the pay button
+                document.getElementById('paymentOptions').style.display = 'block';
+            });
+        });
+
+        document.getElementById('payButton').addEventListener('click', function() {
+            if (paymentLink === null) {
+                alert('Please select a membership plan first.');
+                return;
+            }
+
+            // Redirect to the payment link
+            window.location.href = paymentLink;
+        });
+    </script>
+</body>
+</html>
